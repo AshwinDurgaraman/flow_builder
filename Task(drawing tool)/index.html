@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRAW TOOL</title>
+   <style>
+    body{
+      display: flex;
+      position: fixed;
+    }
+    #canvas {
+      perspective-origin: center;
+      border: 1px solid black;
+      
+      border-radius: 10px;
+    }
+    .toolbox {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      padding: 10px;
+      padding-top: 20px;
+      text-align: center;
+      background:grey;
+      border-radius: 10px;
+    }
+    .tool {
+      margin: 10px 0px;
+      
+      width: 50px;
+      height: 50px;
+      border: none;
+      border-radius: 10px;
+      background-color: grey;
+    }
+    #circle{
+      background-image: url(/icon/oval.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    #diamond{
+      background-image: url(/icon/diamond.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    #rectangle{
+      background-image: url(/icon/rectangular-shape-outline.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    #square{
+      background-image: url(/icon/square-content-layout-interface-symbol.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: 0px;
+    }
+    #arrow{
+      background-image: url(/icon/diagonal-line.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+   #text-input{
+    margin: 0px;
+    padding: 10px;
+    border-radius: 5px;
+      width: 50px;
+      z-index: -1;
+    }
+    #text{
+      border: none;
+      background:grey;
+    }
+    #undo{
+      background-image: url(/icon/reload.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    #redo{
+      background-image: url(/icon/refresh.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    p{
+      font-weight: bolder;
+    }
+    .act{
+  
+      width: 25px;
+      height: 25px;
+      padding: 15px;
+      border: none;
+      margin-top: 10px;
+      background:grey;
+      background-size: cover;
+    }
+    #circle:active{
+      transition-duration: 0.1s;
+      scale: 0.9;
+    }
+    #diamond:active{
+      scale: 0.9;
+    }
+    #rectangle:active{
+      scale: 0.9;
+    }
+    #square:active{
+      scale: 0.9;
+    }
+    #arrow:active{
+      scale: 0.9;
+    }
+    #text:active{
+      scale: 0.9;
+    }
+    #undo:active{
+      scale: 0.9;
+    }
+    #redo:active{
+      scale: 0.9;
+    }
+
+
+
+   </style>
+      </head>
+      <body>
+
+        <div class="toolbox"><p>TOOLBOX</p>
+        
+        <button class="tool" id="circle"></button>
+        <button class="tool" id="diamond"></button>
+        <button class="tool" id="rectangle"></button>
+        <button class="tool" id="square"></button>
+        <button class="tool" id="arrow"></button>
+        <button  id="text"><input id="text-input" type="text" placeholder="text" /></button>
+        <div class="action">
+        <button class="act" id="undo"></button>
+        <button class="act" id="redo"></button>
+      </div>
+      </div>
+      <div class="workArea">
+        <canvas id="canvas" height="600px" width="1200px"></canvas>
+      </div>
+        <script src="/tools.js"></script>
+        
+      </body>      
+
+</html>
